@@ -1,26 +1,21 @@
-.font-squada {
+.font-squada{
     font-family: 'Squada One', 'Noto Sans TC', monospace;
 }
-
-.font-paytone {
+.font-paytone{
     font-family: 'Paytone One', 'Noto Sans TC', sans-serif;
 }
-
-a {
+a{
     text-decoration: none;
 }
-
-ul {
+ul{
     list-style: none;
 }
-
-p {
+p{
     margin-bottom: 0;
 }
-
-h1 {
+h1{
     line-height: 0;
-    img {
+    img{
         width: 85px;
         height: 18px;
         @include media-breakpoint-up(lg){
@@ -29,10 +24,9 @@ h1 {
         }
     }
 }
-
-.nav-border {
+.nav-border{
     position: relative;
-    &::after {
+    &::after{
         content: "";
         position: absolute;
         top:100%;
@@ -42,37 +36,34 @@ h1 {
         height: 1px;
         background-color: #000;
     }
-    @include media-breakpoint-up(lg) {
-        &::after {
+    @include media-breakpoint-up(lg){
+        &::after{
             display: none;
         }
         border-right: 1px solid #000;
         font-size: 18px;
     }
 }
-
-.navbar-collapse {
+.navbar-collapse{
     background: #fff;
     margin: 0 -12px;
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(lg){
         background: $body-bg;
     }
 }
-
-.navbar-light {
-    &:hover {
+.navbar-light{
+    &:hover{
         color:white;
     }
 }
-
-.header-nav-link {
+.header-nav-link{
     border:1px solid transparent;
-    &:hover {
+    &:hover{
         background-color: $danger;
         border:1px solid black;
         color:white;
     }
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(lg){
         border: none;
         &:hover{
             background-color: $body-bg;
@@ -81,57 +72,51 @@ h1 {
         }
     }
 }
-
-.border-lg-left {
-    @include media-breakpoint-up(lg) {
+.border-lg-left{
+    @include media-breakpoint-up(lg){
         border-left:1px solid black;
     }
 }
-
-.connect-icon {
+.connect-icon{
     width: 16px;
     height: 16px;
 }
-
-.modal-header {
+.modal-header{
     position: relative;
-    .btn-close {
+    .btn-close{
         margin-left: 0;
         position: absolute;
         top: 20px;
         right: 20px;
     }
-    @include media-breakpoint-up(lg) {
-        .btn-close {
+    @include media-breakpoint-up(lg){
+        .btn-close{
             display: none;
         }
     }
 }
-
-.modal-body {
-    i {
+.modal-body{
+    i{
         visibility: hidden;
     }
-    .btn-outline-black:hover {
+    .btn-outline-black:hover{
         background: #fff;
         border:1px solid $danger;
         color:black;
-        i {
+        i{
             visibility: visible;
         }
     }
 }
-
-.modal-footer {
-    a {
+.modal-footer{
+    a{
         width: 100%;
     }
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(lg){
         width: auto;
         margin: 0 auto;
     }
 }
-
-.offcanvas {
+.offcanvas{
     height: 50px;
 }
