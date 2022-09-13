@@ -1,0 +1,79 @@
+.artist-img {
+    background-image: url(../images/artist01.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 213px;
+    @include media-breakpoint-up(lg) {
+        height: auto;
+    }
+}
+
+.art-nav-link {
+    color:#808080;
+    font-size: 32px;
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+    span {
+        display: none;
+    }
+    @include media-breakpoint-up(lg) {
+        padding: 16px 48px;
+        font-size: 48px;
+        span {
+            display: block;
+            
+        }
+    }
+}
+
+.art-img-block {
+    img {
+        border:10px solid black;
+    }
+    @include media-breakpoint-up(md) {
+        img {
+
+            width: 100%;
+            height: 380px;
+        }
+    }
+    @include media-breakpoint-up(lg){
+        position: absolute;
+        top:201px;
+        left: 80px;
+        right: 0;
+        img {
+            height: 270px;
+        }
+    }
+}
+
+.tab-block {
+    position: relative;
+    &::before {
+        position: absolute;
+        content: "";
+        border-top: 16px solid $black;
+        border-right: 16px solid transparent;
+        top:0;
+        left:0;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        border-top: 16px solid $black;
+        border-left: 16px solid transparent;
+        top:0;
+        right:0;
+    }
+}
+
+.artist-media:hover {
+    color: $danger;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}

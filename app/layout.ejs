@@ -1,61 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><%- title %></title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-    <link rel="stylesheet" href="./assets/style/all.css">
-  </head>
+<!-- 
 
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
+1. 事前準備 :
+
+(1) 六角老師的課程說明 :
+
+https://hackmd.io/c_xIlt3TTny9BtsvHFpa4g
+
+(2) 設計稿
+
+https://xd.adobe.com/view/bcf8f7eb-689c-4850-b531-a78259c0cdd8-e9ab/grid/
+
+https://github.com/hexschool/2022-web-layout-training
+
+(3) 建立獨立專案
+
+2. Reference :
+
+(0). https://github.com/Cliff1213/NFT_ec
+
+(1).Amberhh #2465
+
+https://github.com/iamAmberhh/week8_ART-NFT
+
+https://iamamberhh.github.io/week8_ART-NFT/
+
+(2) 威爾#1694
+
+https://github.com/letcla0624/hexLayoutWeek8
+
+https://letcla0624.github.io/hexLayoutWeek8/
+
+
+
+ -->
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    <%- title %>
+  </title>
+  <link rel="shortcut icon" href="assets/images/img-w8/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Paytone+One&family=Squada+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/solid.css"
+    integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/fontawesome.css"
+    integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/style/all.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg border-bottom border-1 p-0 mb-lg-5">
+    <div class="container">
+      <h1 class="py-2 py-lg-4 mb-0 me-6 flex-grow-1"><a href="index.html"><img src="assets/images/img-w8/logo.svg" alt="logo"
+            class="img-fluid"></a></h1>
+      <form class="d-flex ms-auto border-lg-left align-items-center search-form">
+        <div class="d-flex align-items-center justify-content-end">
+          <a href="#" class="fs-3 align-bottom search-back d-none"><i class="fas fa-angle-left "></i></a>
+          <input class="form-control me-2 d-none d-md-block ps-lg-6 py-lg-5 search-bar" type="search"
+            placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+        </div>
+        <button type="button" class="border-0 pe-md-6 py-md-5 search" data-bs-toggle="offcanvas" href="#searchCanvas" role="button" aria-controls="searchCanvas"><i class="fas fa-search"></i></button>
+        <div class="offcanvas offcanvas-top d-md-none" data-bs-backdrop="false" tabindex="-1" id="searchCanvas" aria-labelledby="searchCanvasLabel">
+          <div class="offcanvas-body container d-flex justify-content-between">
+            <div class="d-flex align-items-center">
+              <a href="#" class="fs-3 align-bottom search-back" data-bs-dismiss="offcanvas" aria-label="Close"><i class="fas fa-angle-left "></i></a>
+              <input class="form-control me-2 ps-lg-6 py-lg-5 search-bar" type="search"
+                placeholder="搜尋作品名稱、藝術家名稱" aria-label="Search">
+            </div>
+            <button class="border-0 pe-md-6 py-md-5 search"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+
+      </form>
+      <a class="navbar-toggler px-1 mt-1" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars navbar-toggler-icon"></i>
+      </a>
+      <div class="collapse navbar-collapse justify-content-lg-end flex-grow-0" id="navbarSupportedContent">
+        <ul class="navbar-nav py-2 py-lg-0 mb-lg-0 ">
+          <li class="nav-item border-lg-left">
+            <a class="nav-link header-nav-link mx-3 py-3 py-lg-5 text-center fw-bold nav-border" aria-current="page"
+              href="explore.html">探索</a>
+          </li>
+          <li class="nav-item border-lg-left">
+            <a class="nav-link header-nav-link mx-3 py-3 py-lg-5 text-center fw-bold nav-border" href="ranking.html">市值</a>
+          </li>
+          <li class="nav-item border-lg-left">
+            <a class="nav-link header-nav-link mx-3 py-3 py-lg-5 text-center fw-bold" href="#" data-bs-toggle="modal"
+              data-bs-target="#wallet"><span class="d-block d-lg-none">連結錢包</span><i
+                class="d-none d-lg-block fas fa-wallet align-bottom mt-1"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="modal fade" id="wallet" tabindex="-1" aria-labelledby="walletLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen-sm-down">
+      <div class="modal-content">
+        <div class="modal-header justify-content-center">
+          <p class="modal-title  fs-4" id="walletLabel">連結你的錢包</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <ul class="my-1 ps-0 row row-cols-1 row-cols-md-2 g-1">
+            <li class="col">
+              <a href="#" class="d-block btn btn-outline-black d-flex justify-content-between align-items-center">
+                <div>
+                  <img src="assets/images/img-w8/connect01.png" alt="icon" class="connect-icon me-2">
+                  <span class="font-squada">MetaMask</span>
+                </div>
+                <i class="fas fa-check text-danger"></i>
               </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <li class="col">
+              <a href="#" class="d-block btn btn-outline-black d-flex justify-content-between align-items-center">
+                <div>
+                  <img src="assets/images/img-w8/connect02.png" alt="icon" class="connect-icon me-2">
+                  <span class="font-squada">Coinbase Wallet</span>
+                </div>
+                <i class="fas fa-check text-danger"></i>
+              </a>
+            </li>
+            <li class="col">
+              <a href="#" class="d-block btn btn-outline-black d-flex justify-content-between align-items-center">
+                <div>
+                  <img src="assets/images/img-w8/connect03.png" alt="icon" class="connect-icon me-2">
+                  <span class="font-squada">WalletConnect</span>
+                </div>
+                <i class="fas fa-check text-danger"></i>
+              </a>
+            </li>
+            <li class="col">
+              <a href="#" class="d-block btn btn-outline-black d-flex justify-content-between align-items-center">
+                <div>
+                  <img src="assets/images/img-w8/connect04.png" alt="icon" class="connect-icon me-2">
+                  <span class="font-squada">Phantom</span>
+                </div>
+                <i class="fas fa-check text-danger"></i>
+              </a>
+            </li>
+            <li class="col">
+              <a href="#" class="d-block btn btn-outline-black d-flex justify-content-between align-items-center">
+                <div>
+                  <img src="assets/images/img-w8/connect05.png" alt="icon" class="connect-icon me-2">
+                  <span class="font-squada">Glow</span>
+                </div>
+                <i class="fas fa-check text-danger"></i>
+              </a>
+            </li>
+            <li class="col">
+              <a href="#" class="d-block btn btn-outline-black d-flex justify-content-between align-items-center">
+                <div>
+                  <img src="assets/images/img-w8/connect06.png" alt="icon" class="connect-icon me-2">
+                  <span class="font-squada">Fortmatic</span>
+                </div>
+                <i class="fas fa-check text-danger"></i>
+              </a>
             </li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+        </div>
+        <div class="modal-footer border-0 justify-content-center p-0 mb-lg-3">
+            <a href="#" class="btn btn-danger text-white px-5 py-1 border-black m-0">連結錢包</a>
         </div>
       </div>
-    </nav>
+    </div>
+  </div>
 
-    <%- contents %>
 
-    <footer class="footer">
-      footer
+  <%- contents %>
+
+    <footer class="text-center border-top border-1">
+      <div class="border-top border-3 my-1">
+        <p class="p-3">© ART NFT. All Rights Reserved</p>
+      </div>
     </footer>
 
     <script src="./assets/js/vendors.js"></script>
+    <script src="https://kit.fontawesome.com/c503f24f83.js" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.2.0/js/solid.js"
+      integrity="sha384-/BxOvRagtVDn9dJ+JGCtcofNXgQO/CCCVKdMfL115s3gOgQxWaX/tSq5V8dRgsbc"
+      crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v6.2.0/js/fontawesome.js"
+      integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO"
+      crossorigin="anonymous"></script>
     <script src="./assets/js/all.js"></script>
-  </body>
+</body>
 
 </html>
